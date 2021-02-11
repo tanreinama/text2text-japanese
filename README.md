@@ -1,7 +1,7 @@
 # text2text-japanese
 Text2text Conversion Model
 
-このプロジェクトは、[スポンサーを募集しています](report/sponsor.md)。
+このプロジェクトは、[スポンサーを募集しています](https://github.com/tanreinama/gpt2-japanese/blob/master/report/sponsor.md)。
 
 # text2text-japaneseとは何か？
 
