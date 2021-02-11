@@ -94,7 +94,7 @@ $ python training.py　--base_model gpt2ja-medium --run_name run1 --dataset "pai
 $ python training.py　--base_model　gpt2ja-medium　--max_train_steps 200000　--max_answer_len 160 --train_type QtoA --run_name run2 --dataset "pairtext_*.pkl"
 ```
 
-「--max_train_steps」で最大額周回数を指定できます（指定しないとCtrl=Cで終了するまで学習を続けます）。「--max_answer_len」で出力文章の最大の長さを指定します（デフォルトは160トークンです）。「--train_type」で、学習データの入力と出力の向きを指定出来ます。「QtoA」は、学習データを「入力文章→出力文章」として扱い、「AtoQ」はその逆です。
+「--max_train_steps」で最大学習回数を指定できます（指定しないとCtrl＋Cで終了するまで学習を続けます）。「--max_answer_len」で出力文章の最大の長さを指定します（デフォルトは160トークンです）。「--train_type」で、学習データの入力と出力の向きを指定出来ます。「QtoA」は、学習データを「入力文章→出力文章」として扱い、「AtoQ」はその逆です。
 
 
 
@@ -166,7 +166,9 @@ $ python text2text.py --model news2title-medium --context "text2text-japaneseと
 
 
 
-[livedoor ニュースコーパス](http://www.rondhuit.com/download.html#ldcc)中の、映画記事の本文→タイトル出力を評価用データとして、Rouge-F1スコアを求めてみます。
+サンプルのモデルは、ニュース記事→タイトルなので、別のニュース記事コーパスを評価用データとして検証します。
+
+ここでは[livedoor ニュースコーパス](http://www.rondhuit.com/download.html#ldcc)中の、映画記事の本文→タイトル出力を評価用データとして、Rouge-F1スコアを求めてみます。
 
 
 
