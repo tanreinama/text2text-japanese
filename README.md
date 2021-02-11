@@ -3,8 +3,6 @@ Text2text Conversion Model
 
 このプロジェクトは、[スポンサーを募集しています](report/sponsor.md)。
 
-
-
 # text2text-japaneseとは何か？
 
 
@@ -15,7 +13,13 @@ Text2text Conversion Model
 
 質問回答AI、チャットボット、抽象型要約などに使えます。
 
+### スポンサーシップについて
 
+[report/sponsor.md](https://github.com/tanreinama/gpt2-japanese/blob/master/report/sponsor.md)
+
+### デモンストレーション
+
+[Sakamoto's AI lab](http://ailab.nama.ne.jp/#news2title)
 
 ## 仕組み
 
