@@ -46,10 +46,10 @@ def maketree(path):
     except:
         pass
 
-with open('ja-bpe.txt') as f:
+with open('ja-bpe.txt', encoding='utf-8') as f:
     bpe = f.read().split('\n')
 
-with open('emoji.json') as f:
+with open('emoji.json', encoding='utf-8') as f:
     emoji = json.loads(f.read())
 
 enc = BPEEncoder_ja(bpe, emoji)

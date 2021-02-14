@@ -53,9 +53,9 @@ if __name__=='__main__':
     parser.add_argument("--split_tag", help="text split tag", default='' )
     args = parser.parse_args()
 
-    with open('ja-bpe.txt') as f:
+    with open('ja-bpe.txt', encoding='utf-8') as f:
         bpe = f.read().split('\n')
-    with open('emoji.json') as f:
+    with open('emoji.json', encoding='utf-8') as f:
         emoji = json.loads(f.read())
     enc = BPEEncoder_ja(bpe, emoji)
     split_types = enc.encode('。．｡、；：.,「『')
@@ -67,7 +67,7 @@ if __name__=='__main__':
         for j, input in enumerate(tqdm(array_file)):
             if not ((j % args.num_process) == i):
                 continue
-            with open(input, 'r') as fp:
+            with open(input, 'r', encoding='utf-8') as fp:
                 raw_text = fp.read()
                 if args.split_tag == '':
                     tokens = make_rouge(enc.encode(raw_text))

@@ -25,10 +25,10 @@ parser.add_argument("--full_sentences", action='store_true')
 parser.add_argument('--gpu', type=str, default='0')
 args = parser.parse_args()
 
-with open('ja-bpe.txt') as f:
+with open('ja-bpe.txt', encoding='utf-8') as f:
     bpe = f.read().split('\n')
 
-with open('emoji.json') as f:
+with open('emoji.json', encoding='utf-8') as f:
     emoji = json.loads(f.read())
 
 enc = BPEEncoder_ja(bpe, emoji)
@@ -95,7 +95,7 @@ with tf.Session(config=config,graph=tf.Graph()) as sess:
     saver.restore(sess, ckpt)
 
     if len(args.output_file) > 0:
-        with open(args.output_file, 'w') as of:
+        with open(args.output_file, 'w', encoding='utf-8') as of:
             for i in range(args.num_generate):
                 of.write(generate_one(sess, output)+'\n')
                 if i < args.num_generate-1:

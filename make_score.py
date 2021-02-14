@@ -35,9 +35,9 @@ if __name__=='__main__':
     parser.add_argument("--verbose", action='store_true' )
     args = parser.parse_args()
 
-    with open('ja-bpe.txt') as f:
+    with open('ja-bpe.txt', encoding='utf-8') as f:
         bpe = f.read().split('\n')
-    with open('emoji.json') as f:
+    with open('emoji.json', encoding='utf-8') as f:
         emoji = json.loads(f.read())
     enc = BPEEncoder_ja(bpe, emoji)
     n_vocab = len(enc)
@@ -109,7 +109,7 @@ if __name__=='__main__':
             for file in tqdm(files):
                 if file.endswith(".txt"):
                     input = os.path.join(curDir, file)
-                    with open(input, 'r') as fp:
+                    with open(input, 'r', encoding='utf-8') as fp:
                         raw_text = fp.read()
                         if args.dataset_type == 'livedoor':
                             raw_line = raw_text.split('\n')
