@@ -8,7 +8,8 @@ if int(tf.__version__[0]) > 1:
                     n_ctx=1024,
                     n_embd=768,
                     n_head=12,
-                    n_layer=12):
+                    n_layer=12,
+                    n_prediction=0):
             self.n_vocab = n_vocab
             self.n_ctx = n_ctx
             self.n_embd = n_embd
