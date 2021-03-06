@@ -9,12 +9,13 @@ if int(tf.__version__[0]) > 1:
                     n_embd=768,
                     n_head=12,
                     n_layer=12,
-                    n_prediction=0):
+                    n_prediction=160):
             self.n_vocab = n_vocab
             self.n_ctx = n_ctx
             self.n_embd = n_embd
             self.n_head = n_head
             self.n_layer = n_layer
+            self.n_prediction = n_prediction
 else:
     from tensorflow.contrib.training import HParams
 
