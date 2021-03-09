@@ -60,10 +60,10 @@ Text2text Conversion Model
 ```sh
 $ cat train_data/00.txt
 今日の昼飯は<|SEP|>焼肉定食
-$ python make_data.py --src_dir train_data --dst_file pairtext
+$ python make_data.py --src_dir train_data --dst_file pairtext --split_tag "<|SEP|>"
 ```
 
-テキストをエンコードして学習用ファイルを作成します。学習用ファイルは、「--dst_file 」に「_*.pkl」という名前のファイルで作成されます。作成されるファイルの数は、使用するプロセス数です。
+「--split_tag」に区切り文字を指定し、テキストをエンコードして学習用ファイルを作成します。学習用ファイルは、「--dst_file 」に「_*.pkl」という名前のファイルで作成されます。作成されるファイルの数は、使用するプロセス数です。
 
 
 
@@ -81,7 +81,7 @@ $ tar xvfj gpt2ja-medium.tar.bz2
 3. 学習を実行します
 
 ```sh
-$ python training.py　--base_model gpt2ja-medium --run_name run1 --dataset "pairtext_*.pkl"
+$ python training.py --base_model gpt2ja-medium --run_name run1 --dataset "pairtext_*.pkl"
 ```
 
 学習済みのモデルは、checkpoint以下の、「--run_name」で指定したディレクトリ内に保存されます。
